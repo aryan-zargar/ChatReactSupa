@@ -8,7 +8,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import SignUp from './Components/SignUp';
+import Supaauth from './Components/supabase/Supaauth';
+
 const supabase = createClient('https://aqglflqlpmblvuhxmrgj.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFxZ2xmbHFscG1ibHZ1aHhtcmdqIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcwMTA5ODQzMCwiZXhwIjoyMDE2Njc0NDMwfQ.1h_-lLd9gKsNI77xVEDhLJTB4L0tvkVthJxQfsVbL8c')
 function App() {
   const [session, setSession] = useState(null)
@@ -31,7 +32,9 @@ function App() {
       <Router>
         <Switch>
           <Route path="/">
-            <SignUp></SignUp>
+            <div className='d-flex justify-content-center'>
+            <Supaauth/>
+            </div>
           </Route>
         </Switch>
       </Router>
